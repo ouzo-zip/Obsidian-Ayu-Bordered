@@ -117,6 +117,14 @@ pre,
     border-radius: 4px;
 }
 
+/* Shading for dataview blocks */
+.block-language-dataview {
+    background-color: var(--code-background) !important;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    padding: 8px;
+}
+
 /* Syntax colouring */
 .theme-dark .token.string,
 .theme-dark .cm-string {
@@ -161,7 +169,7 @@ pre,
 }
 
 /* =================================================================
-UI & STRUCTURE (BORDERED)                                                  *
+UI & STRUCTURE (BORDERED)
  ================================================================= */
 
 .workspace-split.mod-root {
