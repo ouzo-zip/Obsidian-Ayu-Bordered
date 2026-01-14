@@ -1,0 +1,241 @@
+/* =================================================================
+COLOR PALETTES & VARIABLES
+================================================================= */
+
+body {
+    --tab-radius: 0px;
+}
+
+/* =================================================================
+DARK THEME
+================================================================= */
+.theme-dark {
+
+    --ayu-bg: #0B0E14;
+    --ayu-sidebar: #0B0E14;
+    --ayu-border: #47526666;
+    --ayu-border-solid: #262B36;
+
+    --ayu-orange: #FFB454;
+    --ayu-yellow: #E6B450;
+    --ayu-blue: #59C2FF;
+    --ayu-green: #C2D94C;
+    --ayu-cyan: #95E6CB;
+    --ayu-red: #EA6C73;
+    --ayu-purple: #D2A6FF;
+
+    --ayu-text: #BFBDB6;
+    --ayu-muted: #626A73;
+    --ayu-selection: #273747;
+    --ayu-line-highlight: #131721;
+
+    --background-primary: var(--ayu-bg);
+    --background-primary-alt: var(--ayu-bg);
+    --background-secondary: var(--ayu-sidebar);
+    --background-secondary-alt: var(--ayu-sidebar);
+    --background-modifier-border: var(--ayu-border-solid);
+    --background-modifier-form-field: var(--ayu-sidebar);
+
+    --text-normal: var(--ayu-text);
+    --text-muted: var(--ayu-muted);
+    --text-faint: var(--ayu-muted);
+    --text-on-accent: #0B0E14;
+
+    --interactive-accent: var(--ayu-orange);
+    --text-accent: var(--ayu-orange);
+    --text-link: var(--ayu-blue);
+    --text-selection: var(--ayu-selection);
+
+    /* shading for code blocks */
+    --code-background: #11151c;
+    --code-normal: var(--ayu-text);
+}
+
+/* =================================================================
+LIGHT THEME
+================================================================= */
+.theme-light {
+    --ayu-bg: #FFFFFF;
+    --ayu-sidebar: #FAFAFA;
+    --ayu-border: #E6E4E4;
+    --ayu-orange: #FF9940;
+    --ayu-blue: #399EE6;
+    --ayu-green: #86B300;
+    --ayu-red: #F07171;
+    --ayu-text: #5C6166;
+    --ayu-muted: #A0A1A7;
+    --ayu-selection: #F0EEE4;
+    --ayu-line-highlight: #F5F5F5;
+
+    --background-primary: var(--ayu-bg);
+    --background-primary-alt: var(--ayu-bg);
+    --background-secondary: var(--ayu-sidebar);
+    --background-secondary-alt: var(--ayu-sidebar);
+    --background-modifier-border: var(--ayu-border);
+    --background-modifier-form-field: var(--ayu-bg);
+
+    --text-normal: var(--ayu-text);
+    --text-muted: var(--ayu-muted);
+    --text-faint: var(--ayu-muted);
+    --text-on-accent: #FFFFFF;
+
+    --interactive-accent: var(--ayu-orange);
+    --text-accent: var(--ayu-orange);
+    --text-link: var(--ayu-blue);
+    --text-selection: var(--ayu-selection);
+
+    /* shading for code blocks */
+    --code-background: #F5F7FA;
+    --code-normal: var(--ayu-text);
+}
+
+/* =================================================================
+SYNTAX HIGHLIGHTING & CODE BLOCKS                                          *
+ ================================================================= */
+
+/* Use user fonts */
+.markdown-source-view,
+.cm-scroller,
+.markdown-preview-view {
+    font-family: var(--font-text) !important;
+}
+
+/* Force monospace for code blocks */
+code,
+pre,
+.cm-s-obsidian .cm-code,
+.cm-s-obsidian .cm-math {
+    font-family: var(--font-monospace) !important;
+}
+
+/* Block shading and borders */
+.HyperMD-codeblock,
+.markdown-preview-view pre code,
+.markdown-preview-view pre {
+    background-color: var(--code-background) !important;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+}
+
+/* Syntax colouring */
+.theme-dark .token.string,
+.theme-dark .cm-string {
+    color: var(--ayu-green) !important;
+}
+
+.theme-dark .token.keyword,
+.theme-dark .cm-keyword {
+    color: var(--ayu-orange) !important;
+}
+
+.theme-dark .token.number,
+.theme-dark .cm-number {
+    color: var(--ayu-purple) !important;
+}
+
+.theme-dark .token.function,
+.theme-dark .cm-def,
+.theme-dark .cm-variable {
+    color: var(--ayu-blue) !important;
+}
+
+.theme-dark .token.comment,
+.theme-dark .cm-comment {
+    color: var(--ayu-muted) !important;
+    font-style: italic;
+}
+
+.theme-dark .token.operator,
+.theme-dark .cm-operator {
+    color: var(--ayu-cyan) !important;
+}
+
+.theme-dark .token.tag,
+.theme-dark .cm-tag {
+    color: var(--ayu-cyan) !important;
+}
+
+.theme-dark .token.property,
+.theme-dark .cm-property {
+    color: var(--ayu-yellow) !important;
+}
+
+/* =================================================================
+UI & STRUCTURE (BORDERED)                                                  *
+ ================================================================= */
+
+.workspace-split.mod-root {
+    background-color: var(--background-modifier-border);
+}
+
+.workspace-leaf {
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* Sidebar Borders */
+.workspace-ribbon {
+    border-right: 1px solid var(--background-modifier-border);
+    background-color: var(--background-secondary);
+}
+
+.workspace-split.mod-left-split {
+    border-right: 1px solid var(--background-modifier-border);
+}
+
+.workspace-split.mod-right-split {
+    border-left: 1px solid var(--background-modifier-border);
+}
+
+/* --- Tabs --- */
+.workspace-tab-header {
+    border-right: 1px solid var(--background-modifier-border);
+    border-bottom: 1px solid var(--background-modifier-border);
+    background-color: var(--background-secondary);
+    gap: 6px;
+}
+
+.workspace-tab-header.is-active {
+    background-color: var(--background-primary);
+    border-top: 2px solid var(--interactive-accent);
+    border-bottom: none;
+    z-index: 10;
+}
+
+.workspace-tab-header-inner-title {
+    font-weight: 500;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--interactive-accent);
+    font-weight: 600;
+}
+
+/* Inline Code Styling */
+:not(pre)>code {
+    background-color: var(--code-background);
+    color: var(--ayu-orange);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--background-modifier-border);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--interactive-accent);
+}
